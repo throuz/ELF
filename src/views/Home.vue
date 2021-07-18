@@ -4,6 +4,7 @@
     <HomeNews />
     <HomeReason />
     <HomeCollection />
+    <HomePurchase />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import HomeBanner from "@/components/HomeBanner.vue";
 import HomeNews from "@/components/HomeNews.vue";
 import HomeReason from "@/components/HomeReason.vue";
 import HomeCollection from "@/components/HomeCollection.vue";
+import HomePurchase from "@/components/HomePurchase.vue";
 
 export default {
   name: "Home",
@@ -20,6 +22,7 @@ export default {
     HomeNews,
     HomeReason,
     HomeCollection,
+    HomePurchase,
   },
 };
 </script>
