@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <div class="banner"></div>
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
@@ -16,10 +15,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.banner {
-  height: 80vh;
-  background: #000;
-}
-</style>
