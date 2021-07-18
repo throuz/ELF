@@ -9,21 +9,25 @@
       <Content>
         <router-view />
       </Content>
-      <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
+      <Footer>
+        <FooterContent />
+      </Footer>
     </Layout>
     <BackTop />
   </div>
 </template>
 <script>
 import HeaderContent from "@/components/HeaderContent.vue";
+import FooterContent from "@/components/FooterContent.vue";
 
 export default {
-  components: { HeaderContent },
+  components: { HeaderContent, FooterContent },
 };
 </script>
 
 <style scoped>
-.ivu-layout-header {
+.ivu-layout-header,
+.ivu-layout-footer {
   padding: 0;
 }
 </style>

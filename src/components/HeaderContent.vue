@@ -9,35 +9,31 @@
         </div>
       </Col>
     </Row>
-    <Row>
-      <Col span="24">
-        <Menu
-          v-if="isNavShow"
-          theme="dark"
-          :accordion="true"
-          width="auto"
-          @on-select="navClick"
+    <Menu
+      v-if="isNavShow"
+      theme="dark"
+      :accordion="true"
+      width="auto"
+      @on-select="navClick"
+    >
+      <MenuItem to="/" name="home">首頁</MenuItem>
+      <Submenu
+        v-for="(navItem, index) in navData"
+        :key="index"
+        :to="navItem.link"
+        :name="index"
+      >
+        <template slot="title">{{ navItem.name }}</template>
+        <MenuItem
+          v-for="(subItem, subIndex) in navItem.sub"
+          :key="subIndex"
+          :to="subItem.link"
+          :name="`${index}-${subIndex}`"
         >
-          <MenuItem to="/" name="home">首頁</MenuItem>
-          <Submenu
-            v-for="(navItem, index) in navData"
-            :key="index"
-            :to="navItem.link"
-            :name="index"
-          >
-            <template slot="title">{{ navItem.name }}</template>
-            <MenuItem
-              v-for="(subItem, subIndex) in navItem.sub"
-              :key="subIndex"
-              :to="subItem.link"
-              :name="`${index}-${subIndex}`"
-            >
-              {{ subItem.name }}
-            </MenuItem>
-          </Submenu>
-        </Menu>
-      </Col>
-    </Row>
+          {{ subItem.name }}
+        </MenuItem>
+      </Submenu>
+    </Menu>
   </div>
 </template>
 
