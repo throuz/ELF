@@ -1,25 +1,17 @@
 <template>
   <div class="home">
-    <div class="banner"></div>
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HomeBanner />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HomeBanner from "@/components/HomeBanner.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
+    HomeBanner,
   },
 };
 </script>
-
-<style scoped>
-.banner {
-  height: 80vh;
-  background: #000;
-}
-</style>
