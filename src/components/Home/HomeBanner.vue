@@ -31,6 +31,11 @@ export default {
   padding: 30px;
   font-size: 15px;
 }
+@media screen and (min-width: 765px) {
+  .banner-text {
+    text-align: center;
+  }
+}
 .ivu-btn-group {
   display: flex;
   justify-content: center;

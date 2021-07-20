@@ -40,4 +40,10 @@ export default {
   height: 200px;
   overflow: hidden;
 }
+@media screen and (min-width: 765px) {
+  .ivu-carousel {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
 </style>

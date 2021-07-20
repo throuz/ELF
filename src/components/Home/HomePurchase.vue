@@ -175,4 +175,11 @@ export default {
   gap: 30px;
   margin-bottom: 24px;
 }
+@media screen and (min-width: 765px) {
+  .ivu-form {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
 </style>

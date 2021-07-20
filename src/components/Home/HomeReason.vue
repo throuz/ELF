@@ -5,7 +5,7 @@
       <i-circle
         v-for="(circleItem, index) in circlesData"
         :key="index"
-        :percent="100"
+        :percent="circlePercent"
         :size="100"
       >
         <div>{{ circleItem.textOne }}</div>
@@ -27,7 +27,13 @@ export default {
         { textOne: "填單", textTwo: "3-5", textThree: "天後到貨" },
         { textOne: "全球", textTwo: "12", textThree: "個集貨站" },
       ],
+      circlePercent: 0,
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.circlePercent = 100;
+    }, 1000);
   },
 };
 </script>
