@@ -24,6 +24,8 @@ export default {
 <style scoped>
 .steps {
   padding: 30px 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .title {
   text-align: center;

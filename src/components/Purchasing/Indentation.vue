@@ -41,6 +41,7 @@ export default {
 <style scoped>
 .ivu-btn {
   margin-top: 10px;
+  font-size: 16px;
 }
 .contents {
   padding: 20px 10px;

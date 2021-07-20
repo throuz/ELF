@@ -29,6 +29,9 @@ export default {
 <style scoped>
 .process {
   padding: 30px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 16px;
 }
 .title {
   text-align: center;
