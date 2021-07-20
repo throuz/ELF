@@ -1,39 +1,39 @@
 <template>
   <div class="header-content">
-    <Row type="flex" justify="space-between" align="middle">
-      <Col span="10" class="layout-logo">一路發集運</Col>
-      <Col span="6" class="navIcon">
-        <div class="icon-wrap" @click="navClick">
-          <Icon v-if="isNavShow" type="md-close" size="40" color="#fff" />
-          <Icon v-else type="md-menu" size="40" color="#fff" />
-        </div>
-      </Col>
-    </Row>
-    <Menu
-      v-if="isNavShow"
-      theme="dark"
-      :accordion="true"
-      width="auto"
-      @on-select="navClick"
-    >
-      <MenuItem to="/" name="home">首頁</MenuItem>
-      <Submenu
-        v-for="(navItem, index) in navData"
-        :key="index"
-        :to="navItem.link"
-        :name="index"
+    <div class="nav-top">
+      <h1 span="10" class="layout-logo">一路發集運</h1>
+      <div class="icon-wrap" @click="navClick">
+        <Icon v-if="isNavShow" type="md-close" size="40" color="#fff" />
+        <Icon v-else type="md-menu" size="40" color="#fff" />
+      </div>
+    </div>
+    <transition name="fade">
+      <Menu
+        v-if="isNavShow"
+        theme="dark"
+        :accordion="true"
+        width="auto"
+        @on-select="navClick"
       >
-        <template slot="title">{{ navItem.name }}</template>
-        <MenuItem
-          v-for="(subItem, subIndex) in navItem.sub"
-          :key="subIndex"
-          :to="subItem.link"
-          :name="`${index}-${subIndex}`"
+        <MenuItem to="/" name="home">首頁</MenuItem>
+        <Submenu
+          v-for="(navItem, index) in navData"
+          :key="index"
+          :to="navItem.link"
+          :name="index"
         >
-          {{ subItem.name }}
-        </MenuItem>
-      </Submenu>
-    </Menu>
+          <template slot="title">{{ navItem.name }}</template>
+          <MenuItem
+            v-for="(subItem, subIndex) in navItem.sub"
+            :key="subIndex"
+            :to="subItem.link"
+            :name="`${index}-${subIndex}`"
+          >
+            {{ subItem.name }}
+          </MenuItem>
+        </Submenu>
+      </Menu>
+    </transition>
   </div>
 </template>
 
@@ -92,6 +92,17 @@ export default {
 </script>
 
 <style scoped>
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+@media screen and (min-width: 765px) {
+  .nav-top {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
 .layout-logo {
   color: aliceblue;
   text-align: center;
@@ -101,6 +112,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .ivu-menu {
   background: #000000cc;
@@ -110,5 +122,13 @@ export default {
 }
 .ivu-menu-item {
   font-size: 18px;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
